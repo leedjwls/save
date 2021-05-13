@@ -1,0 +1,21 @@
+while True:
+  gender = str(input('성별을 입력하세요(여자: F / 남자: M) 혹은 프로그램 종료(Q 또는 q) : '))
+
+  if gender == "Q" or gender == "q":
+    print('프로그램을 종료합니다.\n')
+    break
+
+  age = float(input('나이를 입력하세요 : '))
+  price = int(input('제품의 총 구매 금액을 입력하세요 : '))
+
+  if gender == "M":
+    save = price * 0.03
+  elif gender == "F" and age < 20:
+    save = price * 0.015
+  elif gender == "F" and 20 <= age < 30:
+    save = price * 0.03
+  elif gender == "F" and 30 <= age < 40:
+    save = price * 0.045
+  else:
+    save = price * 0.06
+  print('당신의 적립 금액은 ', '%0.2f' % save, '원 입니다.\n')
